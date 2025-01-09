@@ -1,7 +1,9 @@
-##Overview:
+## Overview
+
 A simple webpage made for my practice.
 
-## What were used:
+## What were used
+
 - HTML
 - CSS
 - JS (couldn't make it work :( )
