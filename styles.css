@@ -153,11 +153,14 @@ box-icon {
     grid-template-columns: auto auto auto auto;
     grid-gap: 20px;
     padding: 0;
+    margin: auto;
+    justify-self: center;
 }
 
 .grid-4 div {
     width: 130px;
     height: fit-content;
+    justify-self: center;
 }
 
 .grid-4 p {
@@ -226,8 +229,8 @@ input[type=email] {
     }
 
     .grid-4 {
-        grid-template-columns: auto auto auto;
-        grid-gap: 10px;
+        grid-template-columns: auto auto;
+        grid-gap: 20px;
     }
 
     input[type=email] {
