@@ -236,6 +236,7 @@ input[type=email] {
 
     .gallery {
         height: 280px;
+        width: 78%;
         overflow-y: hidden;
     }
 
