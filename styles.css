@@ -168,6 +168,17 @@ box-icon {
     font-weight: 500;
 }
 
+.grid-3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* margin-left: 80px;
+    margin-right: 80px;
+    padding: 80px; */
+}
+
+.tabs {
+    width: 360px;
+}
 
 .subscribe-btn {
     background-color: rgb(255, 150, 70);
@@ -223,14 +234,33 @@ input[type=email] {
         margin: auto ;
     }
 
+    .gallery {
+        height: 280px;
+        overflow-y: hidden;
+    }
+
     .gallery div{
-        grid-template-columns: auto auto;
+        height: 100%;
+        width: auto;
         /* grid-template-rows: 0; */
+    }
+
+    .gallery div img {
+        height: 250px;
+        width: 260px;
+    }
+
+    #leftbtn, #rightbtn {
+        height: 40px;
     }
 
     .grid-4 {
         grid-template-columns: auto auto;
         grid-gap: 20px;
+    }
+
+    .grid-3 {
+        grid-template-columns: auto;
     }
 
     input[type=email] {
