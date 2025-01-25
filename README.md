@@ -6,7 +6,7 @@ A simple webpage made for my practice.
 
 - HTML
 - CSS
-- JS (couldn't make it work :( )
+- JS (made it work finally :D )
 - Bootstrap and custom classes
 
 ## Modeled After:
