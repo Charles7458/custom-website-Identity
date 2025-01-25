@@ -253,6 +253,7 @@ input[type=email] {
     .gallery {
         height: 280px;
         width: 100%;
+        overflow-y: hidden;
     }
 
     .gallery div{
@@ -352,6 +353,8 @@ input[type=email] {
         width: 100%;
         grid-template-columns: auto ;
         grid-gap: 470px;
+        overflow-y: hidden;
+
     }
 
     .gallery div {
