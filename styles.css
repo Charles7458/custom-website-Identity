@@ -1,4 +1,10 @@
-body::-webkit-scrollbar {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery::-webkit-scrollbar {
     display: none;
 }
 
@@ -104,6 +110,7 @@ box-icon {
 }
 
 .gallery {
+    float: center;
     width: 750px;
     display: flex;
     overflow-x: scroll;
@@ -237,7 +244,7 @@ input[type=email] {
     }
 
     .center-text button {
-        padding: 10px 20px;
+        padding: 5px 10px;
         margin-bottom: 30px;
         justify-self: center;
         margin: auto ;
@@ -245,19 +252,20 @@ input[type=email] {
 
     .gallery {
         height: 280px;
-        width: 78%;
-        overflow-y: hidden;
+        width: 100%;
     }
 
     .gallery div{
         height: 100%;
-        width: auto;
-        /* grid-template-rows: 0; */
+        width: 100%;
+        grid-gap: 10px;
+        padding: 0;
     }
 
     .gallery div img {
-        height: 250px;
-        width: 260px;
+        height: 80%;
+        width: 100%;
+        box-shadow: 2px 2px 2px 2px ;
     }
 
     #leftbtn, #rightbtn {
@@ -271,7 +279,10 @@ input[type=email] {
 
     .grid-3 {
         grid-template-columns: auto;
+        padding: 0;
+        margin: auto;
     }
+ 
 
     input[type=email] {
         text-align: center;
@@ -283,5 +294,73 @@ input[type=email] {
         margin: initial auto;
         justify-self: center;
         margin-left: 40px;
+    }
+
+
+}
+
+@media (max-width:500px) {
+    .logo {
+        margin-left: -20px;
+    }
+    
+    #menu {
+        margin-right: -50px;
+    }
+
+    .center-text {
+        margin-top: 20px;
+        width: 90%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .center-text h1 {
+        font-size: 35px;
+    }
+
+    .center-text i {
+        font-size: 40px;
+        
+    }
+    .center-text p {
+        display: none;
+    }
+
+    .center-text .identity {
+        margin-bottom: 30px;
+    }
+    .center-text button {
+        height: 50px;
+        width: 140px;
+        margin: 10px;
+    }
+
+    .grid-3 {
+        justify-content: start;
+    }
+
+    .grid-4 {
+        justify-content: start;
+    }
+
+    footer .text-end {
+        font-size: 10px;
+    }
+
+    .gallery {
+        width: 100%;
+        grid-template-columns: auto ;
+        grid-gap: 470px;
+    }
+
+    .gallery div {
+        margin-top: 50px;
+        margin-left: 5px;
+    }
+
+    .gallery div img {
+        height: 150px;
+        width: 150px;
     }
 }

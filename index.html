@@ -6,32 +6,10 @@
     <title>Identity</title>
     <link rel="stylesheet" href="boost.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script>
-        const scrollContainer = document.querySelector(".gallery");
-        const leftBtn = document.getElementById("leftbtn");
-        const rightBtn = document.getElementById("rightbtn");
-
-        scrollContainer.addEventListener("wheel", (evt) => {
-            evt.preventDefault();
-            scrollContainer.scrollLeft += evt.deltaY;
-            scrollContainer.style.scrollBehavior = "auto";
-        });
-
-        function leftSlide() {
-            scrollContainer.style.scrollBehavior = "smooth";
-            scrollContainer.scrollLeft += 500;
-        }
-
-        function rightSlide() {
-            // scrollContainer.style.scrollBehavior = "smooth";
-             scrollContainer.scrollLeft -= 500;
-        };
-
-
-
-    </script>
+    
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -44,23 +22,21 @@
             <!-- topbar Start -->
             <div class="container-fluid">
                 <div class="row pt-2">
-                    <div class="col-6 text-start text-white ps-3">
-                        <h2>LOGO</h2>
+                    <div class="col-6 text-start text-white p-3 logo">
+                        <h2 >LOGO</h2>
                     </div>
-                    <div class="col-6 text-end text-white pe-3">
-                        <button class="btn "><box-icon name='menu'color="#ffffff" size="md"></box-icon></button>
+                    <div class="col-6 text-end text-white p-0">
+                        <button class="btn" id="menu"><box-icon name='menu'color="#ffffff" size="md"></box-icon></button>
                     </div>
                 </div>
                     <!-- Text Start -->
                      <div class="container text-white text-center center-text" >
                         <h1>We Help To Focus</h1>
-                        <h1>On Your <i>Identity</i></h1>
+                        <h1 class="identity">On Your <i>Identity</i></h1>
                         <p class="mt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, reprehenderit ab Nam sint mollitia nulla vero eaque ut recusan</p>
                         <!-- buttons -->
-                        <div class="container mt-5 buttons">
                                 <button class="btn btn-orange text-light bold">KNOW MORE</button>
                                 <button class="btn btn-outline-light">OUR PRODUCTS</button>
-                        </div>
                      </div>
                      </div>
                 </div>
@@ -69,9 +45,9 @@
     </div>
     
     <div class="gallery-wrap mt-100 mb-100">
-        <img src="assets/left-arrow.jpg" id="leftbtn" onclick="leftSlide();">
+        <img src="assets/left-arrow.jpg" id="leftbtn" type="button">
 
-        <div class="gallery" id="gallery">
+        <div class="gallery gallery-first-div">
             <div>
                 <span><img src="assets/products/product-1.jpg" class="rounded"></span>
                 <span><img src="assets/products/product-2.jpg" class="rounded"></span>
@@ -82,13 +58,52 @@
             <div class="gallery-second-div">
                 <span><img src="assets/products/product-5.jpg" class="rounded"></span>
                 <span><img src="assets/products/product-6.jpg" class="rounded"></span>
-                <span><img src="assets/products/product-7.jpg" class="rounded"></span>
+                <span><img src="assets/products/product-7.jpg" class="rounded" id="center-two"></span>
                 <span><img src="assets/products/product-8.jpg" class="rounded"></span>
             </div>
         </div>
 
-        <img src="assets/right-arrow.jpg" id="rightbtn" onclick="rightSlide()">
+        <img src="assets/right-arrow.jpg" id="rightbtn" type="button" onclick="hide()">
     </div>
+
+    <script>
+        let left = document.getElementById("leftbtn");
+        let right = document.getElementById("rightbtn");
+        let gallery = document.querySelector(".gallery");
+    
+        gallery.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            gallery.scrollLeft += evt.deltaY;
+            gallery.style.scrollBehavior="auto";
+            var mq = window.matchMedia( "(max-width: 380px)" );
+            if (mq.matches) {
+                gallery.scrollLeft += 2*(evt.deltaY);
+                gallery.style.scrollBehavior="smooth";
+            }
+        });
+    
+        right.addEventListener("click", ()=> {
+            gallery.scrollLeft += 200;
+            gallery.style.scrollBehavior = "smooth";
+
+            var mq = window.matchMedia( "(max-width: 380px)" );
+            if (mq.matches) {
+                gallery.scrollLeft += 150;
+                gallery.style.scrollBehavior="smooth";
+            }
+        });
+
+        left.addEventListener("click", ()=> {
+            gallery.scrollLeft -= 200;
+            gallery.style.scrollBehavior = "smooth";
+
+            var mq = window.matchMedia( "(max-width: 380px)" );
+            if (mq.matches) {
+                gallery.scrollLeft -= 150;
+                gallery.style.scrollBehavior="smooth";
+            }
+        });
+    </script>
     
     <div class="container-fluid p-5 bg-light-gray text-center">
         <p class="text-orange mb-1 p-0">Why Choose Us?</p>
@@ -183,9 +198,11 @@
         </div>
 
         <div class="col mt-3">
-            <p class="text-white text-end"> Copyright&copy;2024. All Rights Reserved.</p>
+            <p class="text-white text-end">By Charles<br>Copyright&copy;2024.<br>All Rights Reserved.</p>
         </div>
    </div>
 </footer>
+
+
 </body>
 </html>
